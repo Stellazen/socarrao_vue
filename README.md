@@ -1,41 +1,20 @@
-# socarrao_vue
+# Desafio SóCarrão.com | Vue js
 
-This template should help get you started developing with Vue 3 in Vite.
+## Em produção 👩🏻‍💻
 
-## Recommended IDE Setup
+Desafio proposto pela SóCarrão.com durante o talent fest da Laboratória. A SóCarrão.com é um portal de anúncios de veículos e aproximadamente 90% dos usuários que acessam o site, acessam via celular. Pensando nisso, a proposta desse desafio foi recriar os cards dos veículos para dispositivos móveis, de maneira criativa, pensando na sua responsividade e que se adaptem aos três principais breakpoints (320px, 375px e 420px ).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Foi disponibilizado um JSON, contendo dados de aproximadamente 50 veículos que prercisou ser consumido em um projeto novo, do zero. Este projeto foi desenvolvido com React e foi preciso fazer as listagens dos veículos e apresentados em formato de card.
 
-## Customize configuration
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## Requisitos
 
-## Project Setup
+* Construir uma aplicação web que consuma um JSON contendo dados de aproximadamente 50 veículos e apresentá-los em formato de cards. A listagem de veículos deverá respeitar o padrão de marca e modelo, além de ser responsiva e paginada. O usuário também terá a opção de escolher a forma de apresentação dos cards (horizontal ou vertical) e definir quantos cards deseja ver por página.
 
-```sh
-npm install
-```
+* Responsividade: Os cards se adaptarão aos três principais breakpoints (320px, 375px e 420px), proporcionando uma experiência agradável em dispositivos móveis.
 
-### Compile and Hot-Reload for Development
+* Escolha de Apresentação: O usuário terá a opção de escolher a forma de apresentação dos cards, podendo optar entre o layout horizontal ou vertical.
 
-```sh
-npm run dev
-```
+* Paginação: A listagem de veículos será paginada, permitindo que o usuário defina quantos cards deseja ver por página. O padrão será 5 cards por página.
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+* Detalhes do Veículo: Cada card exibirá as seguintes informações sobre o veículo: Marca, Modelo, Versão, Transmissão (Automática ou Manual), Ano, Preço, Quilometragem, Botão Simular Financiamento", Botão "Entrar em contato".
