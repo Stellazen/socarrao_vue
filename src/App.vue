@@ -1,23 +1,21 @@
 <template>
-  <header>
-  <PrincipalHeader />
-  </header>
-  <body>
-    <CardCar v-for="(car, index) in carInfo.slice(0,5)" :key="index"
+    <PrincipalHeader />
+
+    <CardCar v-for="(car, index) in visibleCarInfo" :key="index"
     :imagem="car.veiculo_foto[0]" 
     :cidade="car.cidade_nome"
     :marca="car.veiculo_marca"
-    :modelo="car.veiculo_modelo" 
+    :modelo="car.modelo_nome_pai" 
     :cambio="car.veiculo_cambio"
     :ano="car.ano_modelo"
     :valor="car.veiculo_valor"
     :km="car.veiculo_km"
     />
-  </body>
+  
+  <div id="final" class="final"></div>
 </template>
 
 <script>
-// import { RouterLink, RouterView } from 'vue-router'
 import CardCar from './components/CardCar.vue';
 import PrincipalHeader from './components/PrincipalHeader.vue';
 import carInfo from '../data.json';
@@ -26,16 +24,46 @@ export default {
   name: 'App',
   components: {
     PrincipalHeader,
-    CardCar
+    CardCar,
   },
   data(){
-    return{
-      carInfo : carInfo
-    }
-  }
-}
+    return {
+    carInfo: carInfo,
+    itemsPerPage: 5,       // Quantidade inicial de itens exibidos
+    itemsToAdd: 5,         // Quantidade de itens a serem adicionados
+    currentItems: 5,       // Quantidade atual de itens exibidos
+    };
+  },
+  computed: {
+  visibleCarInfo() {
+    return this.carInfo.slice(0, this.currentItems);
+    },
+  },
+  mounted() {
+    const options = {
+      root: null,
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        this.currentItems += this.itemsToAdd;
+        console.log('Element is visible in the viewport');
+      } else {
+        console.log('Element is NOT visible in the viewport');
+      }
+    });
+  }, options);
+
+    const elementToObserve = document.querySelector('#final');
+    observer.observe(elementToObserve);
+  },
+};
 </script>
 
 <style scoped>
-
+  .final{
+    height: 100px;
+  }
 </style>
