@@ -49,9 +49,9 @@ export default {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         this.currentItems += this.itemsToAdd;
-        console.log('Element is visible in the viewport');
+        console.log('Elemento visível');
       } else {
-        console.log('Element is NOT visible in the viewport');
+        console.log('Elemento não visível');
       }
     });
   }, options);
