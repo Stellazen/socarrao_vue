@@ -26,13 +26,7 @@
 <script>
 export default {
     name: 'CardCar',
-    //  methods:{
-    //     getCombinedWidth() {
-    //         // Use o offsetWidth para obter a largura total da div de título (marca + modelo)
-    //         const tituloDiv = this.$el.querySelector('.infos_titulo');
-    //         return tituloDiv ? tituloDiv.offsetWidth : 0;
-    //     }
-    //  }
+
 }
 </script>
 
@@ -52,7 +46,7 @@ defineProps({
 <style scoped>
 
     @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;700&display=swap');
-
+    
     .container{
         max-width: 500px;
         height: 180px;
