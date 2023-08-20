@@ -1,6 +1,6 @@
 
 <template>
-    <section class="container">
+    <section class="container" :class="[cardClasses, { 'vertical-mode': verticalMode }]">
         <div class="imgCar" :style="{ backgroundImage: `url(${imagem})` }">
         <p class="cidade">{{ cidade }}</p>
         </div>
@@ -12,7 +12,7 @@
                 </div>
                 <p class="infos_menores">{{ cambio }}</p>
                 <p class="infos_menores">{{ ano }}</p>
-                <p class="valor">R$ {{ valor.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }}</p>
+                <p class="valor">R$ {{ Number(valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }}</p>
                 <p class="infos_menores">{{ km }} km</p>
             </section>
             <section class="buttons">
@@ -31,6 +31,8 @@ export default {
 </script>
 
 <script setup>
+import { ref, computed, defineProps } from "vue";
+
 defineProps({
   imagem: String,
   cidade: String,
@@ -38,9 +40,11 @@ defineProps({
   modelo: String,
   cambio: String,
   ano: Number,
-  valor: String,
-  km: Number
+  valor: Number,
+  km: Number,
+  verticalMode: Boolean,
 });
+
 </script>
 
 <style scoped>
@@ -132,4 +136,9 @@ defineProps({
         padding: 2px;
         margin: 2px;
     }
+
+    /* .vertical-mode{
+    background-color: aqua;
+  } */
+
 </style>
