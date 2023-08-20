@@ -4,7 +4,7 @@
 
 Desafio proposto pela SóCarrão.com durante o talent fest da Laboratória. A SóCarrão.com é um portal de anúncios de veículos e aproximadamente 90% dos usuários que acessam o site, acessam via celular. Pensando nisso, a proposta desse desafio foi recriar os cards dos veículos para dispositivos móveis, de maneira criativa, pensando na sua responsividade e que se adaptem aos três principais breakpoints (320px, 375px e 420px ).
 
-Foi disponibilizado um JSON, contendo dados de aproximadamente 50 veículos que prercisou ser consumido em um projeto novo, do zero. Este projeto foi desenvolvido com React e foi preciso fazer as listagens dos veículos e apresentados em formato de card.
+Foi disponibilizado um JSON, contendo dados de aproximadamente 50 veículos que prercisou ser consumido em um projeto novo, do zero.
 
 
 ## Requisitos
