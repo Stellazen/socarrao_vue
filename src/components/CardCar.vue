@@ -1,26 +1,26 @@
 
 <template>
-    <section class="container" :class="[cardClasses, { 'vertical-mode': verticalMode }]">
-        <div class="imgCar" :style="{ backgroundImage: `url(${imagem})` }">
-        <p class="cidade">{{ cidade }}</p>
-        </div>
-        <div class="infos_button">
-            <section class="infos">
-                <div class="infos_titulo">
-                    <p class="marca">{{ marca }}</p>
-                    <p class="modelo">{{ modelo }}</p>
-                </div>
-                <p class="infos_menores">{{ cambio }}</p>
-                <p class="infos_menores">{{ ano }}</p>
-                <p class="valor">R$ {{ Number(valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }}</p>
-                <p class="infos_menores">{{ km }} km</p>
-            </section>
-            <section class="buttons">
-                <button class="buttonCard-1">Mais Informações</button>
-                <button class="buttonCard-2">Falar no WhatsApp</button>
-            </section>
-        </div>
-    </section>
+        <section :class="['container', viewMode === 'vertical' ? 'vertical-mode' : 'horizontal-mode']">
+            <div :class="['imgCar', viewMode === 'vertical' ? 'img-vertical' : 'img-horizontal']" :style="{ backgroundImage: `url(${imagem})` }">
+            <p class="cidade">{{ cidade }}</p>
+            </div>
+            <div class="infos_button">
+                <section class="infos">
+                    <div class="infos_titulo">
+                        <p class="marca">{{ marca }}</p>
+                        <p class="modelo">{{ modelo }}</p>
+                    </div>
+                    <p class="infos_menores">{{ cambio }}</p>
+                    <p class="infos_menores">{{ ano }}</p>
+                    <p class="valor"> {{ Number(valor).toLocaleString('pt-br', { style: 'currency', currency: 'BRL' }) }}</p>
+                    <p class="infos_menores">{{ km }} km</p>
+                </section>
+                <section class="buttons">
+                    <button class="buttonCard-1">Mais Informações</button>
+                    <button class="buttonCard-2">Falar no WhatsApp</button>
+                </section>
+            </div>
+        </section>
 </template>
 
 <script>
@@ -31,8 +31,6 @@ export default {
 </script>
 
 <script setup>
-import { ref, computed, defineProps } from "vue";
-
 defineProps({
   imagem: String,
   cidade: String,
@@ -42,7 +40,7 @@ defineProps({
   ano: Number,
   valor: Number,
   km: Number,
-  verticalMode: Boolean,
+  viewMode: Boolean,
 });
 
 </script>
@@ -52,7 +50,7 @@ defineProps({
     @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;700&display=swap');
     
     .container{
-        max-width: 500px;
+        width: 300px;
         height: 180px;
         background-color: white;
         border-radius: 10px;
@@ -60,15 +58,24 @@ defineProps({
         display: flex;
         align-items: center;
         gap: 10px;
-
     }
+    .vertical-mode{
+        width: 180px;
+        height: 380px;
+        flex-direction: column;
+  }
     .imgCar{
         width: 50%;
-        height: 170px;
+        height: 95%;
         background-size: cover;
         background-position: center;
         border-radius: 10px;
         margin-left: 5px;
+    }
+    .img-vertical{
+        margin: 5px 0 0 0;
+        width: 95%;
+        height: 50%;
     }
     .infos_button{
         max-width: 300px;
@@ -136,9 +143,5 @@ defineProps({
         padding: 2px;
         margin: 2px;
     }
-
-    /* .vertical-mode{
-    background-color: aqua;
-  } */
 
 </style>

@@ -9,19 +9,19 @@
       </div>
     </section>
 
-    <CardCar v-for="(car, index) in visibleCarInfo" :key="index"
-    :imagem="car.veiculo_foto[0]" 
-    :cidade="car.cidade_nome"
-    :marca="car.veiculo_marca"
-    :modelo="car.modelo_nome_pai" 
-    :cambio="car.veiculo_cambio"
-    :ano="car.ano_modelo"
-    :valor="car.veiculo_valor"
-    :km="car.veiculo_km"
-    :verticalMode="viewMode"
-    class="card-car"
-    />
-  
+    <section class="cards">
+      <CardCar v-for="(car, index) in visibleCarInfo" :key="index"
+      :imagem="car.veiculo_foto[0]"
+      :cidade="car.cidade_nome"
+      :marca="car.veiculo_marca"
+      :modelo="car.modelo_nome_pai"
+      :cambio="car.veiculo_cambio"
+      :ano="car.ano_modelo"
+      :valor="car.veiculo_valor"
+      :km="car.veiculo_km"
+      :viewMode="viewMode"
+      />
+    </section>
   <div id="final" class="final"></div>
 </template>
 
@@ -48,6 +48,7 @@ export default {
   methods: {
       changeView(mode){
         this.viewMode = mode;
+        console.log("modo de visualização:", this.viewMode);
       },
     },
   computed: {
@@ -81,7 +82,6 @@ export default {
 <style scoped>
 
   @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;700&display=swap');
-
   .options{
     margin-left: 5px;
   }
@@ -108,6 +108,12 @@ export default {
   }
   .visualizar{
     font-family: 'Assistant', sans-serif;
+  }
+  .cards{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
   }
   .final{
     height: 100px;
