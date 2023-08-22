@@ -1,6 +1,6 @@
 <template>
     <header class="header" >
-        <img class="imgLogo" src="../assets/logoSoCarrao_preta.png" alt="logo Só Carrão">
+        <p>versão não oficial</p>
     </header>
 </template>
 
@@ -10,11 +10,8 @@
     min-width: 320px;
     height: 100px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     border-bottom: 2px solid black;
 }
-.imgLogo{
-    width: 100px;
-    height: 100px;
-}
+
 </style>
