@@ -1,6 +1,5 @@
 # Desafio SóCarrão.com | Vue js
 
-## Em produção 👩🏻‍💻
 
 Desafio proposto pela SóCarrão.com durante o talent fest da Laboratória. A SóCarrão.com é um portal de anúncios de veículos e aproximadamente 90% dos usuários que acessam o site, acessam via celular. Pensando nisso, a proposta desse desafio foi recriar os cards dos veículos para dispositivos móveis, de maneira criativa, pensando na sua responsividade e que se adaptem aos três principais breakpoints (320px, 375px e 420px ).
 
